@@ -6,6 +6,8 @@ var engine, world;
 var chaozito;
 var umFundo;
 var laTorre, unaImage;
+var angulos;
+var cannon;
 
 function preload() {
  umFundo = loadImage("./assets/background.gif");
@@ -26,6 +28,9 @@ function setup() {
 
   laTorre = Bodies.rectangle(160,350,160,310, options);
   World.add(world, laTorre);
+
+  angulos = 20;
+  cannon = new HayUnCannon(180,110,130,100,angulos);
  
 }
 
@@ -41,5 +46,7 @@ function draw() {
   imageMode(CENTER);
   image(unaImage, laTorre.position.x, laTorre.position.y, 160, 310);
   pop();
+
+  cannon.display();
    
 }
